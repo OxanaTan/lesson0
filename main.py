@@ -8,4 +8,5 @@ print(9.99 > 9.98 and 1000 != 1000.1)
 print((2 * 2 + 2) == (2 * (2 + 2)))
 
 # "4th program"
-print(float('123.456') * 10)
+print(int(float('123.456') * 10)%10)
+
