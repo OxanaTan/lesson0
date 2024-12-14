@@ -19,7 +19,7 @@ class House:
 
     def __eq__(self, other):
         if isinstance(other, House):
-            return self.number_of_floors <= other.number_of_floors
+            return self.number_of_floors == other.number_of_floors
         return NotImplemented
 
     def __lt__(self, other):
