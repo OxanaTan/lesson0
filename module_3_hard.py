@@ -1,26 +1,17 @@
 def calculate_structure_sum(*args):
     all_sum = 0
     for i in args:
-        if isinstance(i, int):
-            all_sum += i
-            continue
-        if isinstance(i, complex):
-            all_sum += i
-            continue
-        if isinstance(i, float):
+        if isinstance(i, (int, float, complex)):
             all_sum += i
             continue
         if isinstance(i, str):
             all_sum += len(i)
             continue
-        if isinstance(i, list):
-            all_sum += calculate_structure_sum(*i)
-        if isinstance(i, set):
+        elif isinstance(i, (list, set, tuple)):
             all_sum += calculate_structure_sum(*i)
         if isinstance(i, dict):
             all_sum += calculate_structure_sum(*i.items())
-        if isinstance(i, tuple):
-            all_sum += calculate_structure_sum(*i)
+
     return all_sum
 
 
